@@ -21,6 +21,7 @@ sap.ui.define([
 				success: function (data) {
 					that.getView().getModel().setData({
 						tableData: data,
+						tableDataCopy: data,
 						tableName: tableName
 					}, true);
 					that.processData().bind(that);
@@ -43,7 +44,7 @@ sap.ui.define([
 					}),
 					template: new sap.m.Input({
 						value: "{" + e + "}"
-					})
+					}).addStyleClass('inPnaceEditInput')
 				});
 				table.addColumn(column);
 			});

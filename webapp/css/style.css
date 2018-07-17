@@ -1,1 +1,8 @@
-/* Enter your custom styles here */
+.inPnaceEditInput {
+    color: #000000 ! important;
+    background: #ffffff00 ! important;
+    border: 0px solid #bfbfbf36 ! important;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    font-size: 0.75rem ! important;
+}
