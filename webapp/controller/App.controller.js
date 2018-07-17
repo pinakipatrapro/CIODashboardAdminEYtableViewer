@@ -3,7 +3,7 @@ sap.ui.define([
 ], function (Controller) {
 	"use strict";
 
-	return Controller.extend("pinaki.ey.tableviewer.tableviewer.controller.App", {
+	return Controller.extend("pinaki.ey.tableviewer.controller.App", {
 
 		/**
 		 * Called when a controller is instantiated and its View controls (if available) are already created.

@@ -3,7 +3,7 @@ sap.ui.define([
 ], function (Controller) {
 	"use strict";
 
-	return Controller.extend("pinaki.ey.tableviewer.tableviewer.controller.Home", {
+	return Controller.extend("pinaki.ey.tableviewer.controller.Home", {
 		onPress: function (oEvent) {
 			var oItem = oEvent.getSource();
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);

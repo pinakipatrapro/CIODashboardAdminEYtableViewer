@@ -1,11 +1,11 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
-	"pinaki/ey/tableviewer/tableviewer/model/models"
+	"pinaki/ey/tableviewer/model/models"
 ], function (UIComponent, Device, models) {
 	"use strict";
 
-	return UIComponent.extend("pinaki.ey.tableviewer.tableviewer.Component", {
+	return UIComponent.extend("pinaki.ey.tableviewer.Component", {
 
 		metadata: {
 			manifest: "json"
