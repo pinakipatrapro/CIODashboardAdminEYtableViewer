@@ -1,0 +1,35 @@
+{
+    "application": {
+        "id": "",
+        "title": "pinaki.ey.tableviewer.CIODashboardAdminEYtableViewer",
+        "description": "Table View",
+        "type": "SAP_UI5_Component",
+        "componentUrl": "/",
+        "appUrl": "#CIODashboardAdminEYtableViewer-ViewData",
+        "navigationComponentName": "pinaki.ey.tableviewer",
+        "intentSemanticObject": "CIODashboardAdminEYtableViewer",
+        "intentAction": "ViewData",
+        "html5ApplicationName": "ciodashboardadmineytableviewer",
+        "HCPParentApplicationName": ""
+    },
+    "assignment": {
+        "groups": [
+            "90cd15a8-95dc-4eab-865b-f201f0996e05-1531728073054"
+        ],
+        "contentPackages": [
+            "b018ae40-1ffe-4cd1-9681-ad5a801b6cd0-1531728153299"
+        ],
+        "categories": []
+    },
+    "tile": {
+        "type": "StaticTile",
+        "title": "Table Explorer",
+        "subtitle": "View Table Data",
+        "searchKeywords": "Table Explorer,View Table Data",
+        "displayIconUrl": "sap-icon://grid",
+        "displayInfoText": "",
+        "size": "1x1",
+        "serviceURL": "",
+        "refreshInterval": ""
+    }
+}
