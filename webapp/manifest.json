@@ -55,6 +55,9 @@
 			"cozy": true
 		},
 		"models": {
+			"": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
