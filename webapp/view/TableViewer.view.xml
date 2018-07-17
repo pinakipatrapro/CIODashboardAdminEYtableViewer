@@ -2,7 +2,8 @@
 	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:table="sap.ui.table">
 	<Page showHeader="true" title="Table Display {/tableName}">
 		<content>
-			<table:Table id="idDataTable" rows="{/tableDataCopy}" visibleRowCount="20" class="sapUiSizeCompact"/>
+			<table:Table id="idDataTable" rows="{/tableDataCopy}" threshold="99999" showColumnVisibilityMenu="true" alternateRowColors="true"
+				visibleRowCount="20" class="sapUiSizeCompact"/>
 		</content>
 	</Page>
 </mvc:View>

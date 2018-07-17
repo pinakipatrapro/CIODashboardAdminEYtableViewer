@@ -24,7 +24,7 @@ sap.ui.define([
 						tableDataCopy: data,
 						tableName: tableName
 					}, true);
-					that.processData().bind(that);
+					that.processData();
 				}
 			});
 		},
@@ -37,14 +37,21 @@ sap.ui.define([
 		},
 		createTableColumns: function (objKeys) {
 			var table = this.getView().byId('idDataTable');
+
 			objKeys.forEach(function (e) {
+				var input = new sap.m.Input({
+					value: "{" + e + "}"
+				});
+				// input.addEventDelegate({
+				// 	"onAfterRendering": function () {
+				// 		this.addStyleClass('inPnaceEditInput');
+				// 	}
+				// });
 				var column = new tableColumn({
 					label: new sap.m.Label({
 						text: e
 					}),
-					template: new sap.m.Input({
-						value: "{" + e + "}"
-					}).addStyleClass('inPnaceEditInput')
+					template: input
 				});
 				table.addColumn(column);
 			});
