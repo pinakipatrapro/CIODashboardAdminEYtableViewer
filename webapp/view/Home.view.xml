@@ -1,0 +1,13 @@
+<mvc:View controllerName="pinaki.ey.tableviewer.tableviewer.controller.Home" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Page title="{i18n>title}" >
+		<content>
+			<VBox alignItems="Center" class="sapUiLargeMargin">
+				<items>
+					<Input id="idTableNameInput" width="30rem" placeholder="schema.tableName"/>
+					<Button press="onPress" text="Get Details"></Button>
+				</items>
+			</VBox>
+		</content>
+	</Page>
+</mvc:View>
