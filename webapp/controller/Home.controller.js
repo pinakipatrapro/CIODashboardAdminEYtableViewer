@@ -8,7 +8,7 @@ sap.ui.define([
 			var oItem = oEvent.getSource();
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("tableViewer", {
-				tableName: this.getView().byId('idTableNameInput').getValue()
+				tableName: btoa(this.getView().byId('idTableNameInput').getValue())
 			});
 		}
 	});

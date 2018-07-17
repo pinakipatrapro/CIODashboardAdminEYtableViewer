@@ -10,7 +10,7 @@ sap.ui.define([
 			oRouter.getRoute("tableViewer").attachPatternMatched(this._onRouteMatched, this);
 		},
 		_onRouteMatched: function (oEvent) {
-			var tableName = oEvent.getParameter("arguments").tableName;
+			var tableName = atob(oEvent.getParameter("arguments").tableName); 
 			this.queryData(tableName);
 		},
 		queryData: function (tableName) {

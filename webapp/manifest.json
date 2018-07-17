@@ -12,6 +12,18 @@
 		"sourceTemplate": {
 			"id": "ui5template.basicSAPUI5ApplicationProject",
 			"version": "1.40.12"
+		},
+		"crossNavigation": {
+			"inbounds": {
+				"intent1": {
+					"signature": {
+						"parameters": {},
+						"additionalParameters": "allowed"
+					},
+					"semanticObject": "cioadmin",
+					"action": "Display"
+				}
+			}
 		}
 	},
 	"sap.ui": {
@@ -38,6 +50,9 @@
 		"rootView": {
 			"viewName": "pinaki.ey.tableviewer.view.App",
 			"type": "XML"
+		},
+		"config": {
+			"fullWidth": true
 		},
 		"dependencies": {
 			"minUI5Version": "1.30.0",
