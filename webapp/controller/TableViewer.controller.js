@@ -10,15 +10,17 @@ sap.ui.define([
 			oRouter.getRoute("tableViewer").attachPatternMatched(this._onRouteMatched, this);
 		},
 		_onRouteMatched: function (oEvent) {
-			var tableName = atob(oEvent.getParameter("arguments").tableName); 
+			var tableName = atob(oEvent.getParameter("arguments").tableName);
 			this.queryData(tableName);
 		},
 		queryData: function (tableName) {
 			var that = this;
+			this.getView().setBusy(true);
 			$.ajax({
 				url: "/eyhcp/Pinaki/RandomDataGenerator/Scripts/tableDisplay.xsjs?tableName=" + tableName,
 				cache: false,
 				success: function (data) {
+					that.getView().setBusy(false);
 					that.getView().getModel().setData({
 						tableData: data,
 						tableDataCopy: data,
@@ -42,20 +44,19 @@ sap.ui.define([
 				var input = new sap.m.Input({
 					value: "{" + e + "}"
 				});
-				// input.addEventDelegate({
-				// 	"onAfterRendering": function () {
-				// 		this.addStyleClass('inPnaceEditInput');
-				// 	}
-				// });
 				var column = new tableColumn({
 					label: new sap.m.Label({
 						text: e
 					}),
+					sortProperty: e,
+					filterProperty: e,
+					showFilterMenuEntry: true,
+					showSortMenuEntry: true,
 					template: input
 				});
 				table.addColumn(column);
 			});
-		}
+		},
 
 	});
 

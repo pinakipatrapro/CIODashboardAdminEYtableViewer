@@ -59,6 +59,9 @@
 			"libs": {
 				"sap.m": {},
 				"sap.ui.core": {},
+				"sap.ui.export": {
+					"minVersion": ""
+				},
 				"sap.ui.layout": {},
 				"sap.ui.table": {
 					"minVersion": ""
