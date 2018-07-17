@@ -1,6 +1,6 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
 	controllerName="pinaki.ey.tableviewer.tableviewer.controller.TableViewer" xmlns:html="http://www.w3.org/1999/xhtml">
-	<Page showHeader="false" floatingFooter="true">
+	<Page showHeader="false">
 		<content>
 			<html:table id="tableView"></html:table>
 		</content>
