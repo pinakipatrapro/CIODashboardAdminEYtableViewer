@@ -1,7 +1,9 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	"sap/ui/table/Column"
-], function (Controller, tableColumn) {
+	"sap/ui/table/Column",
+	"sap/ui/export/Spreadsheet",
+	"sap/m/MessageToast"
+], function (Controller, tableColumn, Spreadsheet, MessageToast) {
 	"use strict";
 
 	return Controller.extend("pinaki.ey.tableviewer.controller.TableViewer", {
@@ -17,7 +19,7 @@ sap.ui.define([
 			var that = this;
 			this.getView().setBusy(true);
 			$.ajax({
-				url: "/eyhcp/Pinaki/RandomDataGenerator/Scripts/tableDisplay.xsjs?tableName=" + tableName,
+				url: "/eyhcp/CIO/GenerateData/Scripts/TableDisplay.xsjs?tableName=" + tableName,
 				cache: false,
 				success: function (data) {
 					that.getView().setBusy(false);
@@ -25,7 +27,7 @@ sap.ui.define([
 						tableData: data,
 						tableDataCopy: data,
 						tableName: tableName
-					}, true);
+					}, false);
 					that.processData();
 				}
 			});
@@ -39,7 +41,7 @@ sap.ui.define([
 		},
 		createTableColumns: function (objKeys) {
 			var table = this.getView().byId('idDataTable');
-
+			table.removeAllColumns();
 			objKeys.forEach(function (e) {
 				var input = new sap.m.Input({
 					value: "{" + e + "}"
@@ -57,6 +59,38 @@ sap.ui.define([
 				table.addColumn(column);
 			});
 		},
+		createColumnConfig: function (aData) {
+			var aColumns = [];
+			Object.keys(aData[0]).forEach(function (e) {
+				aColumns.push({
+					label: e,
+					property: e
+				});
+			});
+			return aColumns;
+		},
+		onExport: function () {
+			var aCols, aData, oSettings;
+			aData = this.getView().getModel().getProperty("/tableData");
+			aCols = this.createColumnConfig(aData);
+
+			oSettings = {
+				workbook: {
+					columns: aCols
+				},
+				dataSource: aData,
+				context : {
+					sheetName: this.getView().getModel().getProperty("/tableName")
+				},
+				fileName: this.getView().getModel().getProperty("/tableName")
+			};
+
+			new Spreadsheet(oSettings)
+				.build()
+				.then(function () {
+					MessageToast.show("Spreadsheet export has finished");
+				});
+		}
 
 	});
 

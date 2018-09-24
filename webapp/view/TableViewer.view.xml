@@ -1,6 +1,14 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="pinaki.ey.tableviewer.controller.TableViewer"
 	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:table="sap.ui.table">
 	<Page showHeader="true" title="Table Display {/tableName}" busyIndicatorDelay="0" floatingFooter="true">
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Label text="Table Display {/tableName}"/>
+				<ToolbarSpacer/>
+				<Button text="Download" icon="sap-icon://download-from-cloud" press="onExport"/>
+			</Toolbar>
+		</customHeader>
 		<content>
 			<table:Table id="idDataTable" rows="{/tableDataCopy}" threshold="99999" showColumnVisibilityMenu="true" alternateRowColors="true"
 				visibleRowCount="20" class="sapUiSizeCompact" enableColumnFreeze="true" enableCellFilter="true"/>
